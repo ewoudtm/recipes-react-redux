@@ -14,10 +14,14 @@ class RecipeItem extends PureComponent {
   }
 
   render() {
-    const { _id, title, summary, vegan, vegetarian, pescatarian, liked } = this.props
+    const { _id, title, summary, vegan, vegetarian, pescatarian, liked, photo } = this.props
 
     const style = {
       height: '1em'
+    }
+
+    const photo_style = {
+      height: '200px'
     }
 
     return (
@@ -25,6 +29,7 @@ class RecipeItem extends PureComponent {
         <h1>{ title }</h1>
         <div>
           <p>{ summary }</p>
+          <img style= {photo_style} src={photo} />
           <ul>
             { vegan && <li title="vegan"><img style={style} src={Vegan} /></li> }
             { !vegan && vegetarian && <li title="vegetarian"><img style={style} src={Vegetarian} /></li> }

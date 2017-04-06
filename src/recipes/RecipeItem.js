@@ -1,4 +1,6 @@
 import React, { PureComponent, PropTypes } from 'react'
+import { connect } from 'react-redux'
+import { Link } from 'react-router'
 import Vegan from '../images/vegan.svg'
 import Vegetarian from '../images/vegetarian.svg'
 import Pescatarian from '../images/pescatarian.svg'
@@ -26,7 +28,7 @@ class RecipeItem extends PureComponent {
 
     return (
       <article className="recipe">
-        <h1>{ title }</h1>
+        <h1><Link to={`/recipes/${_id}`}>{ title }</Link></h1>
         <div>
           <p>{ summary }</p>
           <img style= {photo_style} src={photo} />

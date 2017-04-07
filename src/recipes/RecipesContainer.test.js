@@ -12,7 +12,7 @@ chai.use(chaiEnzyme)
 const seedRecipesSpy = chai.spy()
 
 describe('<RecipesContainer />', () => {
-  const container = shallow(<RecipesContainer recipes={recipes} seedRecipes={seedRecipesSpy} />)
+  const container = shallow(<RecipesContainer recipes={recipes} fetchRecipes={fetchRecipesSpy} />)
 
   it('is wrapped in a div with class name "recipes"', () => {
     expect(container).to.have.className('wrapper')
